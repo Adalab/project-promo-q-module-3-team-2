@@ -1,0 +1,591 @@
+.desing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $white-two;
+  
+    &__div {
+      width: 281px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+      @media all and (min-width: 768px) {
+        width: 329px;
+      }
+  
+      &--title3 {
+        padding-left: 19px;
+        color: $gunmetal;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  
+  .color1 {
+    background-color: $dark-green-blue;
+  }
+  
+  .color2 {
+    background-color: $dirty-blue;
+  }
+  
+  .color3 {
+    background-color: $hospital-green;
+  }
+  
+  .color4 {
+    background-color: $dried-blood;
+  }
+  
+  .color5 {
+    background-color: $rusty-red;
+  }
+  
+  .color6 {
+    background-color: $tomato;
+  }
+  
+  .color7 {
+    background-color: $slate;
+  }
+  
+  .color8 {
+    background-color: $faded-orange;
+  }
+  
+  .color9 {
+    background-color: $light-grey-blue;
+  }
+  
+  .sqColor {
+    width: 30px;
+    height: 25px;
+  }
+  
+  .familyColor1,
+  .familyColor2,
+  .familyColor3 {
+    display: flex;
+    padding-bottom: 20px;
+  }
+
+  .fill {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .fillInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  
+    &__label {
+      width: 281px;
+      color: $dark-green-blue;
+      font-size: 14px;
+      line-height: 1.43;
+      padding-bottom: 7px;
+  
+      @media all and (min-width: 768px) {
+        width: 329px;
+      }
+    }
+  
+    &__input {
+      width: 281px;
+      height: 30px;
+      font-size: 14px;
+      border: solid 1px $hospital-green;
+      padding: 5px 9px 7px 9px;
+      margin-bottom: 20px;
+  
+      @media all and (min-width: 768px) {
+        width: 329px;
+      }
+    }
+  
+    &__profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: -90px;
+      padding-bottom: 20px;
+    }
+  }
+  
+  .action__upload-btn {
+    background: $dull-orange;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: 0 0 5px rgba(#000, 0.3);
+    color: $white-three;
+    font-family: $font-family-principal;
+    font-size: 14px;
+    padding: 6px 22px 7px 22px;
+    width: 140px;
+    height: 30px;
+    cursor: pointer;
+    @media all and (min-width: 768px) {
+      margin-right: 48px;
+    }
+  }
+  
+  .action__hiddenField {
+    /* Ocultamos el input de tipo "file" porque no podemos 
+      darle los estilos que queremos */
+    display: none;
+  }
+  
+  
+  .profile__preview {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid $hospital-green;
+  }
+  
+  .profile__preview {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+  }
+
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $white-three;
+    border-top: solid 1px $white-three;
+  
+    @media all and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  .footerCopy {
+    color: $brownish-grey;
+    padding-top: 18px;
+    padding-bottom: 12px;
+    opacity: 0.5;
+    @media all and (min-width: 768px) {
+      margin: 18px 380px 22px 41px;
+    }
+  }
+  
+  .footerImage {
+    width: 103px;
+    height: 40px;
+    margin: 12px 47px 20px 48px;
+    @media all and (min-width: 768px) {
+      margin: 10px 40px;
+    }
+  }
+
+  .header {
+    width: 100%;
+    height: 111px;
+  
+    &__container {
+      display: flex;
+      width: 201px;
+      height: 50px;
+  
+      margin: 31px 0 0 40px;
+    }
+    &--logoProfile {
+      width: fit-content;
+    }
+  }
+
+  .mainCard {
+    @media all and (min-width: 768px) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      background-image: linear-gradient($white-four, $white-three);
+      height: 100%;
+      padding: 0 40px;
+      gap: 30px;
+    }
+  }
+  
+  .form {
+    font-family: $font-family-principal;
+    padding: 0 20px;
+  
+    @media all and (min-width: 768px) {
+      width: 329px;
+      padding: 0 0;
+      ;
+    }
+  }
+  
+  .headSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 281px;
+  
+    @media all and (min-width: 768px) {
+      width: 329px;
+    }
+  
+    &__title {
+      color: $gunmetal;
+      font-size: 18px;
+      text-transform: uppercase;
+      text-align: left;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  
+    .fa {
+      color: $dull-orange;
+      padding-right: 10px;
+    }
+  }
+
+  .mainLanding {
+    width: 100vw;
+    height: 85vh;
+    padding: 22vh 10vw 6vh;
+    background-color: $white-four;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .mainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  
+    &__logoCards {
+      width: 250px;
+      height: 63px;
+      background: url('../images/logo-awesome-profile-cards copia.png') center
+        no-repeat;
+      background-size: contain;
+  
+      @media all and (min-width: 768px) {
+        width: 419px;
+        height: 105px;
+      }
+    }
+  
+    &__title {
+      font-family: $font-family-landing;
+      color: $dull-orange;
+      font-size: 19.2px;
+  
+      @media all and (min-width: 768px) {
+        font-size: 24px;
+      }
+    }
+  
+    &__description {
+      font-family: $font-family-principal;
+      color: $dark-green-blue;
+      font-size: 12.8px;
+  
+      @media all and (min-width: 768px) {
+        font-size: 16px;
+      }
+    }
+  
+    &__iconsGroup {
+      width: 268px;
+      height: 73.8px;
+      border: solid 1.6px $dull-orange;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  
+      @media all and (min-width: 768px) {
+        width: 325px;
+        height: 86px;
+      }
+  
+      .iconStyle {
+        color: $dull-orange;
+      }
+  
+      .iconText {
+        color: $gunmetal;
+        font-size: 12.8px;
+        font-family: $font-family-principal;
+        margin-top: 5px;
+      }
+    }
+  }
+  
+  .buttonLanding {
+    width: 129px;
+    height: 42px;
+    background-color: $dirty-blue;
+    border-radius: 21px;
+  
+    &__Link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $white-three;
+      font-family: $font-family-principal;
+      font-weight: 600;
+      display: inline-block;
+      padding: 10%;
+    }
+  }
+
+
+  .preview {
+    background: linear-gradient($silver, $pale-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 457px;
+    width: 100%;
+    margin-top: 20px;
+  
+    @media all and (min-width: 768px) {
+      border-radius: 6px;
+      height: 812px;
+    }
+  
+    &__box {
+      width: 240px;
+      background-color: $white-three;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      position: relative;
+      box-shadow: 0 1px 10px 0 $black-20, 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+      font-family: $font-family-secondary;
+    }
+  
+    &__name {
+      width: 200px;
+      height: 20px;
+      //color: $dark-green-blue;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  
+    &__job {
+      width: 170px;
+      height: 20px;
+      color: $gunmetal;
+      margin-left: 20px;
+    }
+  
+    &__photo {
+      width: 240px;
+      height: 200px;
+      margin-top: 10px;
+      background:
+        url(../../images/img-preview.jpg) center no-repeat;
+      background-size: contain;
+    }
+  
+    &__socialIcons {
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 12px;
+      margin-left: 20px;
+    }
+  
+    &__icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: solid 2px;
+      //color: $dark-green-blue;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+  
+    &__rectangle {
+      width: 5px;
+      height: 42px;
+      // background-color: $dirty-blue;
+      position: absolute;
+      top: 20px;
+    }
+  
+    &__reset {
+      width: 75px;
+      height: 30px;
+      font-size: 12px;
+      color: $gunmetal;
+      text-transform: uppercase;
+      border-radius: 15px;
+      border: solid 1px $white-three;
+      margin-top: 40px;
+      margin-left: -170px;
+      background-color: $silver;
+    }
+  }
+  
+  .fa-trash-can {
+    color: $gunmetal;
+    font-size: 12px;
+  }
+  
+  
+  
+  .palette-1 {
+    .preview__name {
+      color: $dark-green-blue;
+    }
+  
+    .preview__rectangle {
+      background-color: $dirty-blue;
+    }
+  
+    .preview__icon {
+      border-color: $hospital-green;
+      color: $dark-green-blue;
+    }
+  
+  }
+  
+  .palette-2 {
+    .preview__name {
+      color: $dried-blood;
+    }
+  
+    .preview__rectangle {
+      background-color: $rusty-red;
+    }
+  
+    .preview__icon {
+      border-color: $tomato;
+      color: $dried-blood;
+    }
+  
+  }
+  
+  .palette-3 {
+    .preview__name {
+      color: $slate;
+    }
+  
+    .preview__rectangle {
+      background-color: $faded-orange;
+    }
+  
+    .preview__icon {
+      border-color: $light-grey-blue;
+      color: $slate;
+    }
+  
+  }
+
+  .share {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: $white-two solid 1px;
+  
+    &__button {
+      display: flex;
+      text-align: center;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+      width: 209px;
+      height: 50px;
+      background-color: $dull-orange;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+      font-size: 18px;
+      color: $white-three;
+      text-transform: uppercase;
+  
+      // &:hover {
+      //   background-color: $white;
+      // }
+  
+      &--icon {
+        color: $white-three;
+        font-size: 22px;
+        height: 22px;
+        padding-right: 14px;
+      }
+    }
+  }
+  
+  .card {
+    font-family: $font-family-principal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: $white-two solid 1px;
+    border-top: $white-two solid 1px;
+  
+    &__text {
+      color: $gunmetal;
+      font-size: 18px;
+      padding: 20px 0 5px 0;
+    }
+  
+    &__link {
+      font-size: 12px;
+      color: $dull-orange;
+      margin-bottom: 10px;
+    }
+  
+    &__twitter {
+      background-color: $azure;
+      height: 30px;
+      width: 181px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      margin-bottom: 30px;
+  
+      &--icon {
+        font-size: 18px;
+        color: $white-three;
+      }
+  
+      &--link {
+        text-decoration: none;
+        color: $white-three;
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  }
+  .btnDisable {
+    background-color: rgb(135, 136, 135);
+    color: $white-three;
+  }
