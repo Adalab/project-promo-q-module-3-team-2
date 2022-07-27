@@ -2,8 +2,28 @@
 import logoAdalab from '../images/logo-adalab.png';
 import logoAWS from '../images/logo-awesome-profile-cards-copia.png'
 import '../styles/App.scss';
+import {useState} from 'react';
+import { editableInputTypes } from '@testing-library/user-event/dist/utils';
+
 
 function App() {
+
+const [collapsable, setCollapsable] = useState(true);
+
+
+const handleCollapsable = (ev) => {
+
+  const menuClicked = ev.currentTarget.id;
+  console.log(menuClicked);
+  
+  setCollapsable(!collapsable);
+
+  if (collapsable){
+    return()
+  }
+  
+  
+};
   return (
     <div>
   <header className="header">
@@ -53,13 +73,13 @@ function App() {
 
     <form className="form">
       <fieldset className="desing">
-        <section className="headSection js_designTitle">
+        <section className= "headSection js_designTitle"  onClick={ handleCollapsable} id="design">
           <h2 className=" headSection__title">
             <i className="fa fa-object-ungroup" aria-hidden="true"></i>Diseña
           </h2>
           <i className="fa-solid fa-angle-down js_iconDesign rotate"></i>
         </section>
-        <div className="desing__div js_divDesign">
+        <div className={`desing__div js_divDesign ${collapsable}`}>
           <h3 className="desing__div--title3">Colores</h3>
           <div className="desing__div--colors">
             <label className="familyColor1" htmlFor="familyColor1">
@@ -84,13 +104,13 @@ function App() {
         </div>
       </fieldset>
       <fieldset className="fill js_allInputs">
-        <section className="headSection js_fillTitle">
+        <section className= "headSection js_fillTitle" onClick={ handleCollapsable} id="fill">
           <h2 className=" headSection__title">
             <i className="fa fa-keyboard" aria-hidden="true"></i>Rellena
           </h2>
           <i className="fa-solid fa-angle-down js_iconFill"></i>
         </section>
-        <div className="fillInput js_divFill collapsed">
+        <div className= {`fillInput js_divFill ${collapsable}`}>
           <label className="fillInput__label" htmlFor="fullName">Nombre completo</label>
           <input className="fillInput__input js_inputName" type="text" id="fullName" name="name" placeholder="Ej : Anakin Skywalker" required="" />
 
@@ -118,13 +138,13 @@ function App() {
         </div>
       </fieldset>
       <fieldset className="share">
-        <section className="headSection js_shareTitle">
+        <section className="headSection js_fillTitle"  onClick={ handleCollapsable} id="share">
           <h2 className=" headSection__title">
             <i className="fa fa-share-nodes" aria-hidden="true"></i>Comparte
           </h2>
           <i className="fa-solid fa-angle-down js_iconShare"></i>
         </section>
-        <section className="js_divShare collapsed">
+        <section className={`js_divShare collapsed ${collapsable}`}>
           <button className="share__button js_shareButton">
             <i className="fa-regular fa-address-card share__button--icon"></i>Crear
             tarjeta
