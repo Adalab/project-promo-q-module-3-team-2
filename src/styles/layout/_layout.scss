@@ -279,7 +279,7 @@
     &__logoCards {
       width: 250px;
       height: 63px;
-      background: url('../images/logo-awesome-profile-cards copia.png') center
+      background: url('../../images/logo-awesome-profile-cards-copia.png') center
         no-repeat;
       background-size: contain;
   
@@ -589,3 +589,12 @@
     background-color: rgb(135, 136, 135);
     color: $white-three;
   }
+
+  
+.collapsed {
+  display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
