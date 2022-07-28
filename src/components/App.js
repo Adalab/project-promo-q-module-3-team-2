@@ -18,10 +18,10 @@ const handleCollapsable = (ev) => {
   
   setCollapsable(!collapsable);
 
-  if (collapsable){
+  /* if (collapsable){
     return()
   }
-  
+   */
   
 };
   return (
