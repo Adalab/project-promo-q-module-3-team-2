@@ -10,7 +10,6 @@ function App() {
   const handleCollapsable = (ev) => {
     const menuClicked = ev.currentTarget.id;
     descolapsar(menuClicked);
-
     console.log(menuClicked);
   };
 
@@ -19,6 +18,7 @@ function App() {
       ? setClassCollapsed("")
       : setClassCollapsed("collapsed");
   }
+
   /* 
 const [collapsable, setCollapsable] = useState(true);
 
