@@ -59,7 +59,7 @@ function App() {
             <i className="fa-regular fa-trash-can"></i> Reset
           </button>
 
-          <article className="preview__box js_previewBox palette-1">
+          <article className={`preview__box js_previewBox palette-${dataCard.pallete}`}>
             <h3 className="preview__name js_previewName">
               {dataCard.name || `Nombre Apellido`}
             </h3>
