@@ -3,21 +3,36 @@ import logoAdalab from "../images/logo-adalab.png";
 import logoAWS from "../images/logo-awesome-profile-cards-copia.png";
 import "../styles/App.scss";
 import { useState } from "react";
-/* import { editableInputTypes } from "@testing-library/user-event/dist/utils"; */
+import { editableInputTypes } from "@testing-library/user-event/dist/utils";
 
 function App() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  let classCollapsed = "";
-
+  const [classCollapsed, setClassCollapsed] = useState("collapsed");
   const handleCollapsable = (ev) => {
     const menuClicked = ev.currentTarget.id;
-    if (menuClicked === "design") {
-      classCollapsed = "";
-    }
+    descolapsar(menuClicked);
+
     console.log(menuClicked);
   };
 
-  /* ************ */
+  function descolapsar(id) {
+    classCollapsed === "collapsed"
+      ? setClassCollapsed("")
+      : setClassCollapsed("collapsed");
+  }
+  /* 
+const [collapsable, setCollapsable] = useState(true);
+
+
+const handleCollapsable = (ev) => {
+
+  
+  
+  
+  setCollapsable(!collapsable);
+
+ 
+  
+}; */
   return (
     <div>
       <header className="header">
@@ -44,8 +59,8 @@ function App() {
               <ul className="preview__socialIcons">
                 <li>
                   <a
-                    href="https://adalab.es/"
-                    rel="noopener"
+                    href=""
+                    target="_blank"
                     className="preview__icon js_previewPhone js_preview_icon"
                   >
                     <i className="fa-solid fa-mobile-screen-button js_icons"></i>
@@ -53,8 +68,8 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="https://adalab.es/"
-                    rel="noopener"
+                    href=""
+                    target="_blank"
                     className="preview__icon js_previewEmail js_preview_icon"
                   >
                     <i className="fa-regular fa-envelope js_icons"></i>
@@ -63,8 +78,8 @@ function App() {
 
                 <li>
                   <a
-                    href="https://adalab.es/"
-                    rel="noopener"
+                    href=""
+                    target="_blank"
                     className="preview__icon js_previewLinkedin js_preview_icon"
                   >
                     <i className="fa-brands fa-linkedin-in js_icons"></i>
@@ -72,8 +87,8 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="https://adalab.es/"
-                    rel="noopener"
+                    href=""
+                    target="_blank"
                     className="preview__icon js_previewGithub js_preview_icon"
                   >
                     <i className="fa-brands fa-github-alt js_icons"></i>
@@ -98,7 +113,7 @@ function App() {
               </h2>
               <i className="fa-solid fa-angle-down js_iconDesign rotate"></i>
             </section>
-            <div className={"desing__div js_divDesign classCollapsed"}>
+            <div className={`desing__div js_divDesign ${classCollapsed}`}>
               <h3 className="desing__div--title3">Colores</h3>
               <div className="desing__div--colors">
                 <label className="familyColor1" htmlFor="familyColor1">
@@ -151,7 +166,7 @@ function App() {
               </h2>
               <i className="fa-solid fa-angle-down js_iconFill"></i>
             </section>
-            <div className={`desing__div js_divDesign ${classCollapsed}`}>
+            <div className={`fillInput js_divFill fill ${classCollapsed}`}>
               <label className="fillInput__label" htmlFor="fullName">
                 Nombre completo
               </label>
@@ -260,11 +275,7 @@ function App() {
 
               <div className="card js_cardShare collapsed">
                 <p className="card__text js_msj"></p>
-                <a
-                  href="https://adalab.es/"
-                  className="card__link js_url"
-                  rel="noopener"
-                >
+                <a href="" className="card__link js_url" target="_blank">
                   {" "}
                 </a>
 
@@ -272,9 +283,9 @@ function App() {
                   <i className="fa-brands fa-twitter card__twitter--icon"></i>
 
                   <a
-                    href="https://adalab.es/" /* OJO CUIDAO ESTO ES RARO */
                     className="card__twitter--link js_shareTwitter"
-                    rel="noopener"
+                    href=""
+                    target="_blank"
                   >
                     Compartir en twitter
                   </a>
