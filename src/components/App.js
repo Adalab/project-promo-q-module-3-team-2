@@ -39,7 +39,18 @@ function App() {
         : setClassCollapsed("collapsed");
     }
 
+const reset = () =>{
+  setDataCard(  { pallete: "1",
+  name: "",
+  job: "",
+  phone: "",
+  email: "",
+  linkedin: "",
+  github: "",
+  /* photo: "../images/img-preview.png", */
+})
 
+}
   
 
   return (
@@ -55,7 +66,7 @@ function App() {
       </header>
       <main className="mainCard">
         <section className="preview">
-          <button className="preview__reset js_btnReset">
+          <button className="preview__reset js_btnReset" onClick={reset}>
             <i className="fa-regular fa-trash-can"></i> Reset
           </button>
 
