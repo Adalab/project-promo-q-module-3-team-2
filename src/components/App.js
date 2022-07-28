@@ -3,36 +3,46 @@ import logoAdalab from "../images/logo-adalab.png";
 import logoAWS from "../images/logo-awesome-profile-cards-copia.png";
 import "../styles/App.scss";
 import { useState } from "react";
-import { editableInputTypes } from "@testing-library/user-event/dist/utils";
+
 
 function App() {
+  const [dataCard, setDataCard] = useState({
+    pallete: "1",
+    name: "",
+    job: "",
+    phone: "",
+    email: "",
+    linkedin: "",
+    github: "",
+    /* photo: "../images/img-preview.png", */
+  });
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
+
+  const handlerInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    
+    setDataCard({
+      ...dataCard,
+      [inputName]: inputValue,
+    });
+   
+  }; 
   const handleCollapsable = (ev) => {
     const menuClicked = ev.currentTarget.id;
     descolapsar(menuClicked);
     console.log(menuClicked);
-  };
-
+  }; 
   function descolapsar(id) {
-    classCollapsed === "collapsed"
-      ? setClassCollapsed("")
-      : setClassCollapsed("collapsed");
-  }
+      classCollapsed === "collapsed"
+        ? setClassCollapsed("")
+        : setClassCollapsed("collapsed");
+    }
 
-  /* 
-const [collapsable, setCollapsable] = useState(true);
-
-
-const handleCollapsable = (ev) => {
 
   
-  
-  
-  setCollapsable(!collapsable);
 
- 
-  
-}; */
+
   return (
     <div>
       <header className="header">
@@ -51,8 +61,10 @@ const handleCollapsable = (ev) => {
           </button>
 
           <article className="preview__box js_previewBox palette-1">
-            <h3 className="preview__name js_previewName">Nombre apellido</h3>
-            <p className="preview__job js_previewJob">Front-end developer</p>
+            <h3 className="preview__name js_previewName">
+              {dataCard.name || `Nombre Apellido`}
+            </h3>
+            <p className="preview__job js_previewJob">{dataCard.job || `Front-end developer`}</p>
             <div className="preview__photo js__profile-image"></div>
 
             <nav>
@@ -103,7 +115,7 @@ const handleCollapsable = (ev) => {
         <form className="form">
           <fieldset className="desing">
             <section
-              className="headSection js_designTitle"
+              className="headSection  design js_designTitle"
               onClick={handleCollapsable}
               id="design"
             >
@@ -177,6 +189,8 @@ const handleCollapsable = (ev) => {
                 name="name"
                 placeholder="Ej : Anakin Skywalker"
                 required=""
+                value={dataCard.name}
+                onChange={handlerInput}
               />
 
               <label className="fillInput__label" htmlFor="job">
@@ -189,6 +203,8 @@ const handleCollapsable = (ev) => {
                 name="job"
                 placeholder="Ej : Jedi Knight"
                 required=""
+                value={dataCard.job}
+                onChange={handlerInput}
               />
 
               <p className="fillInput__label">Imagen de perfil</p>
@@ -217,6 +233,8 @@ const handleCollapsable = (ev) => {
                 placeholder="Ej : skyguy@gmail.com"
                 required=""
                 pattern="[a-zA-Z0-9!#$%&amp;'*_+-]([\.]?[a-zA-Z0-9!#$%&amp;'*_+-])+@[a-zA-Z0-9]([^@&amp;%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
+                value={dataCard.email}
+                onChange={handlerInput}
               />
 
               <label className="fillInput__label" htmlFor="tel">
@@ -229,7 +247,9 @@ const handleCollapsable = (ev) => {
                 name="phone"
                 placeholder="Ej : 555-55-55-55"
                 required=""
-                maxlength="9"
+                maxLength="9"
+                value={dataCard.phone}
+                onChange={handlerInput}
               />
               <label className="fillInput__label" htmlFor="linkedin">
                 Linkedin
@@ -241,6 +261,8 @@ const handleCollapsable = (ev) => {
                 name="linkedin"
                 placeholder="Ej : @linkedin"
                 required=""
+                value={dataCard.linkedin}
+                onChange={handlerInput}
               />
 
               <label className="fillInput__label" htmlFor="github">
@@ -253,6 +275,8 @@ const handleCollapsable = (ev) => {
                 name="github"
                 placeholder="Ej : @sky.guy"
                 required=""
+                value={dataCard.github}
+                onChange={handlerInput}
               />
             </div>
           </fieldset>
