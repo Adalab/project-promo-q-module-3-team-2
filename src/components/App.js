@@ -81,8 +81,9 @@ const reset = () =>{
               <ul className="preview__socialIcons">
                 <li>
                   <a
-                    href=""
+                    href={dataCard.phone}
                     target="_blank"
+                    rel="noreferrer"
                     className="preview__icon js_previewPhone js_preview_icon"
                   >
                     <i className="fa-solid fa-mobile-screen-button js_icons"></i>
@@ -90,7 +91,7 @@ const reset = () =>{
                 </li>
                 <li>
                   <a
-                    href=""
+                    href={dataCard.email}
                     target="_blank"
                     className="preview__icon js_previewEmail js_preview_icon"
                   >
@@ -100,8 +101,9 @@ const reset = () =>{
 
                 <li>
                   <a
-                    href=""
+                    href={dataCard.linkedin}
                     target="_blank"
+                    rel="noreferrer"
                     className="preview__icon js_previewLinkedin js_preview_icon"
                   >
                     <i className="fa-brands fa-linkedin-in js_icons"></i>
@@ -109,7 +111,7 @@ const reset = () =>{
                 </li>
                 <li>
                   <a
-                    href=""
+                    href={dataCard.github}
                     target="_blank"
                     className="preview__icon js_previewGithub js_preview_icon"
                   >
@@ -307,15 +309,15 @@ const reset = () =>{
               </h2>
               <i className="fa-solid fa-angle-down js_iconShare"></i>
             </section>
-            <section className={`js_divShare collapsed ${classCollapsed}`}>
+            <section className={`${classCollapsed}`}>
               <button className="share__button js_shareButton">
                 <i className="fa-regular fa-address-card share__button--icon"></i>
                 Crear tarjeta
               </button>
 
-              <div className="card js_cardShare collapsed">
+              <div className="card  collapsed">
                 <p className="card__text js_msj"></p>
-                <a href="" className="card__link js_url" target="_blank">
+                <a href="" className="card__link js_url" target="_blank"  rel="noreferrer">
                   {" "}
                 </a>
 
@@ -326,6 +328,7 @@ const reset = () =>{
                     className="card__twitter--link js_shareTwitter"
                     href=""
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Compartir en twitter
                   </a>
