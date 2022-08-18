@@ -196,12 +196,12 @@ const reset = () =>{
               </h2>
               <i className="fa-solid fa-angle-down js_iconFill"></i>
             </section>
-            <div className={`fillInput js_divFill fill ${classCollapsed}`}>
+            <div className={`fillInput  ${classCollapsed}`}>
               <label className="fillInput__label" htmlFor="fullName">
                 Nombre completo
               </label>
               <input
-                className="fillInput__input js_inputName"
+                className="fillInput__input "
                 type="text"
                 id="fullName"
                 name="name"
