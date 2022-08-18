@@ -2,30 +2,43 @@
 import logoAdalab from "../images/logo-adalab.png";
 import logoAWS from "../images/logo-awesome-profile-cards-copia.png";
 import "../styles/App.scss";
-import { useState } from "react";
+import { useState, useEffect} from "react";
+import ls from '../services/localStorage';
 
 
 function App() {
-  const [dataCard, setDataCard] = useState({
-    pallete: "1",
+
+
+  const [dataCard, setDataCard] = useState(
+     
+    ls.get('userData', {pallete: "1",
     name: "",
     job: "",
     phone: "",
     email: "",
     linkedin: "",
     github: "",
-    /* photo: "../images/img-preview.png", */
-  });
+     photo: "../images/img-preview.png",})
+   );
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
   const [arrowRotated, setArrowRotated] = useState("");
+
+  useEffect (()=>{
+    ls.set( 'userData', dataCard )
+  }, [dataCard])
+  
+  ;
+
 
   const handlerInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     
+    
     setDataCard({
       ...dataCard,
       [inputName]: inputValue,
+      
     });
    
   }; 
