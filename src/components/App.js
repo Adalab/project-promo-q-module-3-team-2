@@ -81,18 +81,20 @@ const reset = () =>{
               <ul className="preview__socialIcons">
                 <li>
                   <a
-                    href={dataCard.phone}
-                    target="_blank"
+                    href={`tel:${dataCard.phone}`}
+                    
                     rel="noreferrer"
                     className="preview__icon js_previewPhone js_preview_icon"
+
                   >
                     <i className="fa-solid fa-mobile-screen-button js_icons"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    href={dataCard.email}
-                    target="_blank"
+                    href={`mailto:${dataCard.email}`}
+                    
+                    rel="noreferrer"
                     className="preview__icon js_previewEmail js_preview_icon"
                   >
                     <i className="fa-regular fa-envelope js_icons"></i>
@@ -112,6 +114,7 @@ const reset = () =>{
                 <li>
                   <a
                     href={dataCard.github}
+                    rel="noreferrer"
                     target="_blank"
                     className="preview__icon js_previewGithub js_preview_icon"
                   >
