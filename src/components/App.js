@@ -4,6 +4,7 @@ import logoAWS from "../images/logo-awesome-profile-cards-copia.png";
 import "../styles/App.scss";
 import { useState, useEffect} from "react";
 import ls from '../services/localStorage';
+import callToApi from "../services/fetch";
 
 
 function App() {
@@ -22,12 +23,12 @@ function App() {
    );
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
   const [arrowRotated, setArrowRotated] = useState("");
+  const[shareLink, setShareLink] = useState("");
 
   useEffect (()=>{
-    ls.set( 'userData', dataCard )
-  }, [dataCard])
-  
-  ;
+    ls.set( 'userData', dataCard )}, [dataCard]);
+
+ 
 
 
   const handlerInput = (ev) => {
@@ -42,6 +43,16 @@ function App() {
     });
    
   }; 
+
+  const handleShare = (ev) =>{
+    ev.preventDefault();
+    callToApi(shareLink).then((response)=>{setShareLink(response)
+      console.log(response)}
+    )
+   
+    
+
+  }
   const handleCollapsable = (ev) => {
     const menuClicked = ev.currentTarget.id;
     descolapsar(menuClicked);
@@ -339,14 +350,14 @@ const reset = () =>{
               <i className={`fa-solid fa-angle-down ${arrowRotated}`}></i>
             </section>
             <section className={`${classCollapsed}`}>
-              <button className="share__button">
+              <button className="share__button" onClick= {handleShare}>
                 <i className="fa-regular fa-address-card share__button--icon"></i>
                 Crear tarjeta
               </button>
 
-              <div className="card  collapsed">
+              <div className="card ">
                 <p className="card__text"></p>
-                <a href="" className="card__link " target="_blank"  rel="noreferrer">
+                <a href='https://awesome-profile-cards.herokuapp.com/card' className="card__link " target="_blank"  rel="noreferrer">
                   {" "}
                 </a>
 
