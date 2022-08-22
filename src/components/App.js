@@ -1,10 +1,12 @@
 // import previewImg from '../images/img-preview.jpg';
-import logoAdalab from "../images/logo-adalab.png";
-import logoAWS from "../images/logo-awesome-profile-cards-copia.png";
+
 import "../styles/App.scss";
 import ls from "../services/localStorage";
 import callToApi from "../services/fetch";
+import Header from "./Header"
+import Footer from "./Footer";
 import { useState, useEffect } from "react";
+import CardPreview from "./CardPreview";
 
 function App() {
   const [dataCard, setDataCard] = useState(
@@ -75,7 +77,8 @@ function App() {
 
   return (
     <div>
-      <header className="header">
+      <Header/>
+      {/* <header className="header">
         <div className="header__container">
           <img
             className="header__container--logoProfile"
@@ -83,14 +86,14 @@ function App() {
             alt="logo awespne logo-awesome-profile-cards"
           />
         </div>
-      </header>
+      </header> */}
       <main className="mainCard">
         <section className="preview">
           <button className="preview__reset " onClick={reset}>
             <i className="fa-regular fa-trash-can"></i> Reset
           </button>
 
-          <article className={`preview__box palette-${dataCard.pallete}`}>
+          {/* <article className={`preview__box palette-${dataCard.pallete}`}>
             <h3 className="preview__name ">
               {dataCard.name || `Nombre Apellido`}
             </h3>
@@ -143,8 +146,10 @@ function App() {
               </ul>
             </nav>
             <div className="preview__rectangle"></div>
-          </article>
-        </section>
+          </article>*/} 
+          <CardPreview dataCard={dataCard}/>
+        </section> 
+       
 
         <form className="form">
           <fieldset className="desing">
@@ -366,13 +371,7 @@ function App() {
           </fieldset>
         </form>
       </main>
-
-      <footer className="footer">
-        <span className="footerCopy">Bichatrónicas ©2022</span>
-        <div>
-          <img className="footerImage" src={logoAdalab} alt="logo adalab" />
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
