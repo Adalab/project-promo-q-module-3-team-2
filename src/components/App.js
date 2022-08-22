@@ -3,7 +3,7 @@
 import "../styles/App.scss";
 import ls from "../services/localStorage";
 import callToApi from "../services/fetch";
-import Header from "./Header"
+import Header from "./Header";
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
 import CardPreview from "./CardPreview";
@@ -11,7 +11,7 @@ import CardPreview from "./CardPreview";
 function App() {
   const [dataCard, setDataCard] = useState(
     ls.get("userData", {
-      pallete: "1",
+      palette: "1",
       name: "",
       job: "",
       phone: "",
@@ -64,7 +64,7 @@ function App() {
 
   const reset = () => {
     setDataCard({
-      pallete: "1",
+      palette: "1",
       name: "",
       job: "",
       phone: "",
@@ -77,7 +77,7 @@ function App() {
 
   return (
     <div>
-      <Header/>
+      <Header />
       {/* <header className="header">
         <div className="header__container">
           <img
@@ -146,10 +146,9 @@ function App() {
               </ul>
             </nav>
             <div className="preview__rectangle"></div>
-          </article>*/} 
-          <CardPreview dataCard={dataCard}/>
-        </section> 
-       
+          </article>*/}
+          <CardPreview dataCard={dataCard} />
+        </section>
 
         <form className="form">
           <fieldset className="desing">
@@ -342,16 +341,14 @@ function App() {
               <div className="card ">
                 <p className="card__text"></p>
                 <a
-                  href={
-                    shareLink.success === true
-                      ? shareLink.cardURL
-                      : shareLink.error
-                  }
+                  href="."
                   className="card__link "
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {shareLink}
+                  {shareLink.success === true
+                    ? shareLink.cardURL
+                    : shareLink.error}
                 </a>
 
                 <div className="card__twitter">
@@ -371,7 +368,7 @@ function App() {
           </fieldset>
         </form>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
