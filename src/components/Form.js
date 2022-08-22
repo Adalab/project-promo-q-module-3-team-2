@@ -46,7 +46,7 @@
         </h2>
         <i className={`fa-solid fa-angle-down ${arrowRotated}`}></i>
       </section>
-      <div className={`desing__div js_divDesign ${classCollapsed}`}>
+      <div className={`desing__div ${classCollapsed}`}>
         <h3 className="desing__div--title3">Colores</h3>
         <div className="desing__div--colors">
           <label className="familyColor1" htmlFor="familyColor1">
@@ -121,7 +121,7 @@
           Puesto
         </label>
         <input
-          className="fillInput__input js_inputJob"
+          className="fillInput__input "
           type="text"
           id="job"
           name="job"

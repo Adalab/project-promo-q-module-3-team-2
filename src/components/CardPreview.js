@@ -26,7 +26,7 @@ const CardPreview = (props) =>{
             <a
               href={`mailto:${props.dataCard.email}`}
               rel="noreferrer"
-              className="preview__icon js_previewEmail"
+              className="preview__icon"
             >
               <i className="fa-regular fa-envelope"></i>
             </a>
@@ -37,9 +37,9 @@ const CardPreview = (props) =>{
               href={props.dataCard.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="preview__icon js_previewLinkedin "
+              className="preview__icon  "
             >
-              <i className="fa-brands fa-linkedin-in "></i>
+              <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </li>
           <li>
