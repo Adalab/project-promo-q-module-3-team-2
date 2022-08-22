@@ -2,93 +2,76 @@
 import logoAdalab from "../images/logo-adalab.png";
 import logoAWS from "../images/logo-awesome-profile-cards-copia.png";
 import "../styles/App.scss";
-import { useState, useEffect} from "react";
-import ls from '../services/localStorage';
+import ls from "../services/localStorage";
 import callToApi from "../services/fetch";
-
+import { useState, useEffect } from "react";
 
 function App() {
-
-
   const [dataCard, setDataCard] = useState(
-     
-    ls.get('userData', {pallete: "1",
-    name: "",
-    job: "",
-    phone: "",
-    email: "",
-    linkedin: "",
-    github: "",
-     photo: "../images/img-preview.png",})
-   );
+    ls.get("userData", {
+      pallete: "1",
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      photo: "../images/img-preview.png",
+    })
+  );
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
   const [arrowRotated, setArrowRotated] = useState("");
-  const[shareLink, setShareLink] = useState("");
+  const [shareLink, setShareLink] = useState("");
 
-  useEffect (()=>{
-    ls.set( 'userData', dataCard )}, [dataCard]);
-
- 
-
+  useEffect(() => {
+    ls.set("userData", dataCard);
+  }, [dataCard]);
 
   const handlerInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    
-    
+
     setDataCard({
       ...dataCard,
       [inputName]: inputValue,
-      
     });
-   
-  }; 
+  };
 
-  const handleShare = (ev) =>{
+  const handleShare = (ev) => {
     ev.preventDefault();
-    callToApi(shareLink).then((response)=>{setShareLink(response)
-      console.log(response)}
-    )
-   
-    
-
-  }
+    callToApi(dataCard).then((response) => {
+      setShareLink(response);
+      console.log("respuesta", response);
+    });
+  };
   const handleCollapsable = (ev) => {
     const menuClicked = ev.currentTarget.id;
     descolapsar(menuClicked);
-    rotate (menuClicked);
+    rotate(menuClicked);
     console.log(menuClicked);
-    
+  };
 
-  }; 
-
-  const rotate =(id) =>{
-    arrowRotated === ""
-       ? setArrowRotated("rotate")
-       : setArrowRotated("");
-  }
+  const rotate = (id) => {
+    arrowRotated === "" ? setArrowRotated("rotate") : setArrowRotated("");
+  };
   function descolapsar(id) {
-        classCollapsed === "collapsed"
-       ? setClassCollapsed("")
-       : setClassCollapsed("collapsed");
+    classCollapsed === "collapsed"
+      ? setClassCollapsed("")
+      : setClassCollapsed("collapsed");
+  }
 
-    }
-
-
-
-const reset = () =>{
-  setDataCard(  { pallete: "1",
-  name: "",
-  job: "",
-  phone: "",
-  email: "",
-  linkedin: "",
-  github: "",
-  /* photo: "../images/img-preview.png", */
-})
-
-}
-  
+  const reset = () => {
+    setDataCard({
+      pallete: "1",
+      name: "",
+      job: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      /* photo: "../images/img-preview.png", */
+    });
+  };
 
   return (
     <div>
@@ -111,7 +94,9 @@ const reset = () =>{
             <h3 className="preview__name ">
               {dataCard.name || `Nombre Apellido`}
             </h3>
-            <p className="preview__job ">{dataCard.job || `Front-end developer`}</p>
+            <p className="preview__job ">
+              {dataCard.job || `Front-end developer`}
+            </p>
             <div className="preview__photo"></div>
 
             <nav>
@@ -119,10 +104,8 @@ const reset = () =>{
                 <li>
                   <a
                     href={`tel:${dataCard.phone}`}
-                    
                     rel="noreferrer"
                     className="preview__icon"
-
                   >
                     <i className="fa-solid fa-mobile-screen-button"></i>
                   </a>
@@ -130,7 +113,6 @@ const reset = () =>{
                 <li>
                   <a
                     href={`mailto:${dataCard.email}`}
-                    
                     rel="noreferrer"
                     className="preview__icon js_previewEmail"
                   >
@@ -182,13 +164,12 @@ const reset = () =>{
               <div className="desing__div--colors">
                 <label className="familyColor1" htmlFor="familyColor1">
                   <input
-                   
                     id="familyColor1 "
                     type="radio"
                     value="1"
                     name="pallete"
-                    checked = {dataCard.pallete === "1"}
-                    onChange = {handlerInput}
+                    checked={dataCard.pallete === "1"}
+                    onChange={handlerInput}
                   />
                   <div className="color1 sqColor"></div>
                   <div className="color2 sqColor"></div>
@@ -196,13 +177,12 @@ const reset = () =>{
                 </label>
                 <label className="familyColor2" htmlFor="familyColor2">
                   <input
-                    
                     id="familyColor2"
                     type="radio"
                     value="2"
                     name="pallete"
-                    checked = {dataCard.pallete === "2"}
-                    onChange = {handlerInput}
+                    checked={dataCard.pallete === "2"}
+                    onChange={handlerInput}
                   />
                   <div className="color4 sqColor"></div>
                   <div className="color5 sqColor"></div>
@@ -210,13 +190,12 @@ const reset = () =>{
                 </label>
                 <label className="familyColor3" htmlFor="familyColor3">
                   <input
-                    
                     id="familyColor3"
                     type="radio"
                     value="3"
                     name="pallete"
-                    checked = {dataCard.pallete === "3"}
-                    onChange = {handlerInput}
+                    checked={dataCard.pallete === "3"}
+                    onChange={handlerInput}
                   />
                   <div className="color7 sqColor"></div>
                   <div className="color8 sqColor"></div>
@@ -277,7 +256,7 @@ const reset = () =>{
                   className="action__hiddenField"
                 />
 
-                <div ></div>
+                <div></div>
               </div>
 
               <label className="fillInput__label" htmlFor="Email">
@@ -350,15 +329,24 @@ const reset = () =>{
               <i className={`fa-solid fa-angle-down ${arrowRotated}`}></i>
             </section>
             <section className={`${classCollapsed}`}>
-              <button className="share__button" onClick= {handleShare}>
+              <button className="share__button" onClick={handleShare}>
                 <i className="fa-regular fa-address-card share__button--icon"></i>
                 Crear tarjeta
               </button>
 
               <div className="card ">
                 <p className="card__text"></p>
-                <a href='https://awesome-profile-cards.herokuapp.com/card' className="card__link " target="_blank"  rel="noreferrer">
-                  {" "}
+                <a
+                  href={
+                    shareLink.success === true
+                      ? shareLink.cardURL
+                      : shareLink.error
+                  }
+                  className="card__link "
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {shareLink}
                 </a>
 
                 <div className="card__twitter">
