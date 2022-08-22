@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.f8cdec3e.css",
-    "main.js": "./static/js/main.49640cc0.js",
+    "main.js": "./static/js/main.6dcae43c.js",
     "static/media/img-preview.jpg": "./static/media/img-preview.9ab8ff40a61f5c157ddb.jpg",
     "static/media/logo-awesome-profile-cards-copia.png": "./static/media/logo-awesome-profile-cards-copia.9ae3de9f5f125624c29e.png",
     "index.html": "./index.html",
     "main.f8cdec3e.css.map": "./static/css/main.f8cdec3e.css.map",
-    "main.49640cc0.js.map": "./static/js/main.49640cc0.js.map"
+    "main.6dcae43c.js.map": "./static/js/main.6dcae43c.js.map"
   },
   "entrypoints": [
     "static/css/main.f8cdec3e.css",
-    "static/js/main.49640cc0.js"
+    "static/js/main.6dcae43c.js"
   ]
 }
