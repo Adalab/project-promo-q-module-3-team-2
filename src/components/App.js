@@ -1,19 +1,17 @@
 // import previewImg from '../images/img-preview.jpg';
-
-import "../styles/App.scss";
-import ls from "../services/localStorage";
+import { useState, useEffect } from "react";
+//services
 import callToApi from "../services/fetch";
+import ls from "../services/localStorage";
+//styles
+import "../styles/App.scss";
+//components
 import Header from "./Header";
 import Footer from "./Footer";
-import { useState, useEffect } from "react";
 import CardPreview from "./CardPreview";
 import GetAvatar from "./GetAvatar";
 
 function App() {
-  const [avatar, setAvatar] = useState("");
-  const updateAvatar = (avatar) => {
-    setAvatar(avatar);
-  };
   const [dataCard, setDataCard] = useState(
     ls.get("userData", {
       palette: "1",
@@ -29,7 +27,10 @@ function App() {
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
   const [arrowRotated, setArrowRotated] = useState("");
   const [shareLink, setShareLink] = useState("");
-
+  const [avatar, setAvatar] = useState("");
+  const updateAvatar = (avatar) => {
+    setAvatar(avatar);
+  };
   useEffect(() => {
     ls.set("userData", dataCard);
   }, [dataCard]);
@@ -68,6 +69,8 @@ function App() {
   }
 
   const reset = () => {
+    console.log("mi siela el reset no va, mira a ver");
+    /*   updateAvatar(); */
     setDataCard({
       palette: "1",
       name: "",
@@ -76,83 +79,20 @@ function App() {
       email: "",
       linkedin: "",
       github: "",
-      /* photo: "../images/img-preview.png", */
+      photo: "../images/img-preview.png",
     });
   };
 
   return (
     <div>
       <Header />
-      {/* <header className="header">
-        <div className="header__container">
-          <img
-            className="header__container--logoProfile"
-            src={logoAWS}
-            alt="logo awespne logo-awesome-profile-cards"
-          />
-        </div>
-      </header> */}
       <main className="mainCard">
         <section className="preview">
           <button className="preview__reset " onClick={reset}>
             <i className="fa-regular fa-trash-can"></i> Reset
           </button>
 
-          {/* <article className={`preview__box palette-${dataCard.pallete}`}>
-            <h3 className="preview__name ">
-              {dataCard.name || `Nombre Apellido`}
-            </h3>
-            <p className="preview__job ">
-              {dataCard.job || `Front-end developer`}
-            </p>
-            <div className="preview__photo"></div>
-
-            <nav>
-              <ul className="preview__socialIcons">
-                <li>
-                  <a
-                    href={`tel:${dataCard.phone}`}
-                    rel="noreferrer"
-                    className="preview__icon"
-                  >
-                    <i className="fa-solid fa-mobile-screen-button"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`mailto:${dataCard.email}`}
-                    rel="noreferrer"
-                    className="preview__icon "
-                  >
-                    <i className="fa-regular fa-envelope"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href={dataCard.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="preview__icon"
-                  >
-                    <i className="fa-brands fa-linkedin-in "></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={dataCard.github}
-                    rel="noreferrer"
-                    target="_blank"
-                    className="preview__icon"
-                  >
-                    <i className="fa-brands fa-github-alt "></i>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div className="preview__rectangle"></div>
-          </article>*/}
-          <CardPreview dataCard={dataCard} />
+          <CardPreview dataCard={dataCard} avatar={avatar} />
         </section>
 
         <form className="form">
@@ -176,8 +116,8 @@ function App() {
                     id="familyColor1 "
                     type="radio"
                     value="1"
-                    name="pallete"
-                    checked={dataCard.pallete === "1"}
+                    name="palette"
+                    checked={dataCard.palette === "1"}
                     onChange={handlerInput}
                   />
                   <div className="color1 sqColor"></div>
@@ -189,8 +129,8 @@ function App() {
                     id="familyColor2"
                     type="radio"
                     value="2"
-                    name="pallete"
-                    checked={dataCard.pallete === "2"}
+                    name="palette"
+                    checked={dataCard.palette === "2"}
                     onChange={handlerInput}
                   />
                   <div className="color4 sqColor"></div>
@@ -202,8 +142,8 @@ function App() {
                     id="familyColor3"
                     type="radio"
                     value="3"
-                    name="pallete"
-                    checked={dataCard.pallete === "3"}
+                    name="palette"
+                    checked={dataCard.palette === "3"}
                     onChange={handlerInput}
                   />
                   <div className="color7 sqColor"></div>
@@ -360,8 +300,7 @@ function App() {
                 </a>
 
                 <div className="card__twitter">
-                  <i className="fa-brands fa-twitter card__twitter--icon"></i>
-
+                  <i className="fa-brands fa-twitter card__twitter--icon"></i>{" "}
                   <a
                     className="card__twitter--link"
                     href={`https://twitter.com/intent/tweet?text=He%20creado%20mi%20mi%20tarjeta%20con%20Awsome%20Profile&url=${shareLink.cardURL}`}

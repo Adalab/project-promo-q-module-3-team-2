@@ -11,7 +11,10 @@ const CardPreview = (props) => {
         {props.dataCard.job || `Front-end developer`}
       </p>
       <div className="preview__photo">
-        <Profile avatar={props.avatar} />
+        <div
+          className="profile__photo"
+          style={{ backgroundImage: `url(${props.avatar})` }}
+        ></div>
       </div>
 
       <nav>

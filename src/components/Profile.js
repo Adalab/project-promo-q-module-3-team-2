@@ -8,8 +8,8 @@ function Profile(props) {
   return (
     <div className="profile">
       <div
-        className="profile__avatar"
-        style={{ backgroundImage: `url(${props.avatar})` }}
+        className="profile__photo"
+        style={{ backgroundImage: `url(${avatar})` }}
       ></div>
     </div>
   );

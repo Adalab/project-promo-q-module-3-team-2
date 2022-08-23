@@ -1,10 +1,17 @@
-/* .profile {
-} */
-.profile__avatar {
-  border: 1px solid #ccc;
-  width: 300px;
-  height: 300px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.profile {
+  &__avatar {
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 300px;
+  }
+  &__photo {
+    width: 240px;
+    height: 200px;
+    margin-top: 10px;
+    background: url(../images/img-preview.jpg) center no-repeat;
+    /* background-size: contain; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
