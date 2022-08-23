@@ -1,7 +1,8 @@
-import '../styles/CardPreview.scss'
+import "../styles/CardPreview.scss";
+import Profile from "./Profile";
 
-const CardPreview = (props) =>{
-    return (
+const CardPreview = (props) => {
+  return (
     <article className={`preview__box palette-${props.dataCard.pallete}`}>
       <h3 className="preview__name ">
         {props.dataCard.name || `Nombre Apellido`}
@@ -9,7 +10,9 @@ const CardPreview = (props) =>{
       <p className="preview__job ">
         {props.dataCard.job || `Front-end developer`}
       </p>
-      <div className="preview__photo"></div>
+      <div className="preview__photo">
+        <Profile avatar={props.avatar} />
+      </div>
 
       <nav>
         <ul className="preview__socialIcons">
@@ -56,8 +59,7 @@ const CardPreview = (props) =>{
       </nav>
       <div className="preview__rectangle"></div>
     </article>
+  );
+};
 
-    )
-}
-
-export default  CardPreview;
+export default CardPreview;

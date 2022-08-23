@@ -7,8 +7,13 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
 import CardPreview from "./CardPreview";
+import GetAvatar from "./GetAvatar";
 
 function App() {
+  const [avatar, setAvatar] = useState("");
+  const updateAvatar = (avatar) => {
+    setAvatar(avatar);
+  };
   const [dataCard, setDataCard] = useState(
     ls.get("userData", {
       palette: "1",
@@ -250,7 +255,7 @@ function App() {
 
               <p className="fillInput__label">Imagen de perfil</p>
               <div className="fillInput__profile">
-                <label className="action__upload-btn" htmlFor="img-selector">
+                {/*    <label className="action__upload-btn" htmlFor="img-selector">
                   Añadir imagen
                 </label>
                 <input
@@ -258,9 +263,12 @@ function App() {
                   name="photo"
                   id="img-selector"
                   className="action__hiddenField"
-                />
+                /> */}
 
-                <div></div>
+                <div>
+                  {" "}
+                  <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+                </div>
               </div>
 
               <label className="fillInput__label" htmlFor="Email">
