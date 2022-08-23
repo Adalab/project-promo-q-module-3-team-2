@@ -356,7 +356,7 @@ function App() {
 
                   <a
                     className="card__twitter--link"
-                    href=""
+                    href={`https://twitter.com/intent/tweet?text=He%20creado%20mi%20mi%20tarjeta%20con%20Awsome%20Profile&url=${shareLink.cardURL}`}
                     target="_blank"
                     rel="noreferrer"
                   >
