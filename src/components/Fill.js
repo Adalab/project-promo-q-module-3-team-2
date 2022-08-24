@@ -1,13 +1,26 @@
-const Fill = () => {
+import GetAvatar from "./GetAvatar";
+
+const Fill = (props) => {
+
+  const handleCollapsable = (ev) =>{
+    props.handleCollapsable();
+  }
+
+  const handlerInput= (ev) =>{
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    props.handlerInput(inputValue, inputName);
+  }
+
   return (
     <fieldset className="fill">
       <section className="headSection" onClick={handleCollapsable} id="fill">
         <h2 className=" headSection__title">
           <i className="fa fa-keyboard" aria-hidden="true"></i>Rellena
         </h2>
-        <i className={`fa-solid fa-angle-down ${arrowRotated}`}></i>
+        <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
       </section>
-      <div className={`fillInput  ${classCollapsed}`}>
+      <div className={`fillInput  ${props.classCollapsed}`}>
         <label className="fillInput__label" htmlFor="fullName">
           Nombre completo
         </label>
@@ -18,7 +31,7 @@ const Fill = () => {
           name="name"
           placeholder="Ej : Anakin Skywalker"
           required=""
-          value={dataCard.name}
+          value={props.dataCard.name}
           onChange={handlerInput}
         />
 
@@ -32,7 +45,7 @@ const Fill = () => {
           name="job"
           placeholder="Ej : Jedi Knight"
           required=""
-          value={dataCard.job}
+          value={props.dataCard.job}
           onChange={handlerInput}
         />
 
@@ -49,8 +62,7 @@ const Fill = () => {
       /> */}
 
           <div>
-            {" "}
-            <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+            <GetAvatar avatar={props.avatar} updateAvatar={props.updateAvatar} />
           </div>
         </div>
 
@@ -65,7 +77,7 @@ const Fill = () => {
           placeholder="Ej : skyguy@gmail.com"
           required=""
           pattern="[a-zA-Z0-9!#$%&amp;'*_+-]([\.]?[a-zA-Z0-9!#$%&amp;'*_+-])+@[a-zA-Z0-9]([^@&amp;%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
-          value={dataCard.email}
+          value={props.dataCard.email}
           onChange={handlerInput}
         />
 
@@ -80,7 +92,7 @@ const Fill = () => {
           placeholder="Ej : 555-55-55-55"
           required=""
           maxLength="9"
-          value={dataCard.phone}
+          value={props.dataCard.phone}
           onChange={handlerInput}
         />
         <label className="fillInput__label" htmlFor="linkedin">
@@ -93,7 +105,7 @@ const Fill = () => {
           name="linkedin"
           placeholder="Ej : @linkedin"
           required=""
-          value={dataCard.linkedin}
+          value={props.dataCard.linkedin}
           onChange={handlerInput}
         />
 
@@ -107,7 +119,7 @@ const Fill = () => {
           name="github"
           placeholder="Ej : @sky.guy"
           required=""
-          value={dataCard.github}
+          value={props.dataCard.github}
           onChange={handlerInput}
         />
       </div>

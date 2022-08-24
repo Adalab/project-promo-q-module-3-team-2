@@ -1,14 +1,12 @@
 // import previewImg from '../images/img-preview.jpg';
 import { useState, useEffect } from "react";
 //services
-import callToApi from "../services/fetch";
+
 import ls from "../services/localStorage";
 //styles
 import "../styles/App.scss";
 //components
-import Header from "./Header";
 import Footer from "./Footer";
-import CardPreview from "./CardPreview";
 import Card from "./Card";
 
 function App() {
@@ -28,32 +26,29 @@ function App() {
   const [arrowRotated, setArrowRotated] = useState("");
   const [shareLink, setShareLink] = useState("");
   const [avatar, setAvatar] = useState("");
+
+
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
   };
+
   useEffect(() => {
     ls.set("userData", dataCard);
   }, [dataCard]);
 
-  const handlerInput = (ev) => {
-    const inputValue = ev.target.value;
-    const inputName = ev.target.name;
-
+  const handlerInput = (inputValue, inputName) => {
     setDataCard({
       ...dataCard,
       [inputName]: inputValue,
     });
   };
 
-  const handleShare = (ev) => {
-    ev.preventDefault();
-    callToApi(dataCard).then((response) => {
-      setShareLink(response);
-      console.log("respuesta", response);
-    });
+  const handleShare = (link) => {
+     setShareLink(link);  
   };
-  const handleCollapsable = (ev) => {
-    const menuClicked = ev.currentTarget.id;
+
+  const handleCollapsable = (data) => {
+    const menuClicked = data.id;
     descolapsar(menuClicked);
     rotate(menuClicked);
     console.log(menuClicked);
@@ -62,6 +57,7 @@ function App() {
   const rotate = (id) => {
     arrowRotated === "" ? setArrowRotated("rotate") : setArrowRotated("");
   };
+
   function descolapsar(id) {
     classCollapsed === "collapsed"
       ? setClassCollapsed("")
@@ -84,9 +80,21 @@ function App() {
 
   return (
     <div>
-      <Header />
+      
       <main className="mainCard">
-        <Card />
+        <Card 
+          reset={reset}
+          handleCollapsable={handleCollapsable}
+          handlerInput={handlerInput} 
+          handleShare={handleShare} 
+          updateAvatar={updateAvatar}
+
+          dataCard={dataCard}
+          shareLink={shareLink}
+          avatar={avatar}
+          arrowRotated={arrowRotated} 
+          classCollapsed={classCollapsed}
+          />
       </main>
       <Footer />
     </div>

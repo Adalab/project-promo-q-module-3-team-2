@@ -2,10 +2,16 @@ import "../styles/CardPreview.scss";
 import Profile from "./Profile";
 
 const CardPreview = (props) => {
-  return (
+  const reset = (ev) =>{
+    ev.preventDefault();
+    props.reset();
+  }
+
+
+    return (
     <section className="preview">
-      <article className={`preview__box palette-${props.dataCard.pallete}`}>
-        <button className="preview__reset " onClick={props.reset}>
+      <article className={`preview__box palette-${props.dataCard.palette}`}>
+        <button className="preview__reset " onClick={reset}>
           <i className="fa-regular fa-trash-can"></i> Reset
         </button>
         <h3 className="preview__name ">

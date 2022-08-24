@@ -1,4 +1,15 @@
-const Design = () => {
+const Design = (props) => {
+  
+  const handleCollapsable = (ev) =>{
+    props.handleCollapsable();
+  }
+
+  const handlerInput= (ev) =>{
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    props.handlerInput(inputValue, inputName);
+  }
+
   return (
     <fieldset className="desing">
       <section
@@ -10,9 +21,9 @@ const Design = () => {
           <i className="fa fa-object-ungroup" aria-hidden="true"></i>
           Diseña
         </h2>
-        <i className={`fa-solid fa-angle-down ${arrowRotated}`}></i>
+        <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
       </section>
-      <div className={`desing__div ${classCollapsed}`}>
+      <div className={`desing__div ${props.classCollapsed}`}>
         <h3 className="desing__div--title3">Colores</h3>
         <div className="desing__div--colors">
           <label className="familyColor1" htmlFor="familyColor1">
@@ -21,7 +32,7 @@ const Design = () => {
               type="radio"
               value="1"
               name="palette"
-              checked={dataCard.palette === "1"}
+              checked={props.dataCard.palette === "1"}
               onChange={handlerInput}
             />
             <div className="color1 sqColor"></div>
@@ -34,7 +45,7 @@ const Design = () => {
               type="radio"
               value="2"
               name="palette"
-              checked={dataCard.palette === "2"}
+              checked={props.dataCard.palette === "2"}
               onChange={handlerInput}
             />
             <div className="color4 sqColor"></div>
@@ -47,7 +58,7 @@ const Design = () => {
               type="radio"
               value="3"
               name="palette"
-              checked={dataCard.palette === "3"}
+              checked={props.dataCard.palette === "3"}
               onChange={handlerInput}
             />
             <div className="color7 sqColor"></div>
