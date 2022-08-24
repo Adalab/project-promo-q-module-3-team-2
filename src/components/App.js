@@ -69,8 +69,7 @@ function App() {
   }
 
   const reset = () => {
-    console.log("mi siela el reset no va, mira a ver");
-    /*   updateAvatar(); */
+    updateAvatar();
     setDataCard({
       palette: "1",
       name: "",
