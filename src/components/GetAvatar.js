@@ -4,6 +4,11 @@ import defaultAvatar from "../images/img-preview.jpg";
 import "../styles/GetAvatar.scss";
 
 function GetAvatar(props) {
+
+  // const updateAvatar= (ev) =>{
+  //   const image = ev.currentTarget.files[0]
+  //   props.updateAvatar(image);
+  // }
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -81,7 +86,6 @@ function GetAvatar(props) {
 
 GetAvatar.propTypes = {
   avatar: PropTypes.string.isRequired,
-  updateAvatar: PropTypes.func.isRequired,
 };
 
 export default GetAvatar;

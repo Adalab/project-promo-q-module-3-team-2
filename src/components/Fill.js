@@ -62,7 +62,8 @@ const Fill = (props) => {
       /> */}
 
           <div>
-            <GetAvatar avatar={props.avatar} updateAvatar={props.updateAvatar} />
+            <GetAvatar avatar={props.avatar}
+            updateAvatar={props.updateAvatar} />
           </div>
         </div>
 

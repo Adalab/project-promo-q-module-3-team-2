@@ -7,18 +7,26 @@ const Card = (props) => {
   return (
     <>    
     <Header />
+    <main className="mainCard">
+    <CardPreview reset={props.reset}
+      dataCard={props.dataCard} 
+      avatar={props.dataCard.photo}
+      updateAvatar={props.updateAvatar} />
+
     <form className="form">
       <Design handleCollapsable={props.handleCollapsable} 
       dataCard={props.dataCard} 
       arrowRotated={props.arrowRotated} 
-      classCollapsed={props.classCollapsed}/>
+      classCollapsed={props.classCollapsed}
+      handlerInput={props.handlerInput}/>
 
       <Fill handleCollapsable={props.handleCollapsable} 
+      handlerInput={props.handlerInput}
+      updateAvatar={props.updateAvatar} 
       dataCard={props.dataCard} 
       arrowRotated={props.arrowRotated} 
       classCollapsed={props.classCollapsed}
-      updateAvatar={props.updateAvatar}
-      avatar={props.avatar} />
+      avatar={props.dataCard.photo} />
 
       <Share handleCollapsable={props.handleCollapsable} 
       dataCard={props.dataCard} 
@@ -28,8 +36,8 @@ const Card = (props) => {
       shareLink={props.shareLink} />
 
       </form>
-      <CardPreview reset={props.reset}
-       updateAvatar={props.updateAvatar}/>
+      </main>
+      
     </>
 
       // <CardPreview dataCard={dataCard} avatar={avatar} />

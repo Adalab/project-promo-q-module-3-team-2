@@ -1,12 +1,10 @@
 import "../styles/CardPreview.scss";
-import Profile from "./Profile";
 
 const CardPreview = (props) => {
   const reset = (ev) =>{
     ev.preventDefault();
     props.reset();
   }
-
 
     return (
     <section className="preview">

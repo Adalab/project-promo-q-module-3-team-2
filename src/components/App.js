@@ -25,12 +25,6 @@ function App() {
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
   const [arrowRotated, setArrowRotated] = useState("");
   const [shareLink, setShareLink] = useState("");
-  const [avatar, setAvatar] = useState("");
-
-
-  const updateAvatar = (avatar) => {
-    setAvatar(avatar);
-  };
 
   useEffect(() => {
     ls.set("userData", dataCard);
@@ -43,6 +37,12 @@ function App() {
     });
   };
 
+  const updateAvatar =(image)=>{
+    setDataCard({
+      ...dataCard,
+      photo: image
+    })
+  }
   const handleShare = (link) => {
      setShareLink(link);  
   };
@@ -65,7 +65,6 @@ function App() {
   }
 
   const reset = () => {
-    updateAvatar();
     setDataCard({
       palette: "1",
       name: "",
@@ -80,22 +79,18 @@ function App() {
 
   return (
     <div>
-      
-      <main className="mainCard">
         <Card 
           reset={reset}
           handleCollapsable={handleCollapsable}
           handlerInput={handlerInput} 
-          handleShare={handleShare} 
-          updateAvatar={updateAvatar}
+          handleShare={handleShare}
+          updateAvatar={updateAvatar} 
 
           dataCard={dataCard}
           shareLink={shareLink}
-          avatar={avatar}
           arrowRotated={arrowRotated} 
-          classCollapsed={classCollapsed}
-          />
-      </main>
+          // classCollapsed={classCollapsed}
+          />  
       <Footer />
     </div>
   );
