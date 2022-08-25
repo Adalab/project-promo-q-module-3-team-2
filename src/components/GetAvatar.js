@@ -9,6 +9,8 @@ function GetAvatar(props) {
   //   const image = ev.currentTarget.files[0]
   //   props.updateAvatar(image);
   // }
+
+
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
