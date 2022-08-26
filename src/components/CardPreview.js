@@ -1,10 +1,14 @@
 import "../styles/CardPreview.scss";
+import defaultAvatar from '../images/img-preview.jpg'
 
 const CardPreview = (props) => {
+
   const reset = (ev) =>{
     ev.preventDefault();
     props.reset();
   }
+
+  const avatar = props.avatar === "" ? defaultAvatar : props.avatar;
 
     return (
     <section className="preview">
@@ -21,7 +25,7 @@ const CardPreview = (props) => {
         <div className="preview__photo">
           <div
             className="profile__photo"
-            style={{ backgroundImage: `url(${props.avatar})` }}
+            style={{ backgroundImage: `url(${avatar})` }}
           ></div>
         </div>
 

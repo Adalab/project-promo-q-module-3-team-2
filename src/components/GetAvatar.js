@@ -4,13 +4,6 @@ import defaultAvatar from "../images/img-preview.jpg";
 import "../styles/GetAvatar.scss";
 
 function GetAvatar(props) {
-
-  // const updateAvatar= (ev) =>{
-  //   const image = ev.currentTarget.files[0]
-  //   props.updateAvatar(image);
-  // }
-
-
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -68,15 +61,17 @@ function GetAvatar(props) {
   const avatar = props.avatar === "" ? defaultAvatar : props.avatar;
   return (
     <div className="get-avatar">
-      <label className="get-avatar__label">
-        Get avatar!
-        <input
-          type="file"
-          ref={myFileField}
-          className="get-avatar__upload-field"
-          onChange={uploadImage}
-        />
+      <label className="action__upload-btn" htmlFor="img-selector">
+        Añadir imagen
       </label>
+      <input
+        type="file"
+        name="photo"
+        id="img-selector"
+        className="action__hiddenField"
+        ref={myFileField}
+        onChange={uploadImage}
+      />
 
       <div
         className="get-avatar__preview"
@@ -88,6 +83,7 @@ function GetAvatar(props) {
 
 GetAvatar.propTypes = {
   avatar: PropTypes.string.isRequired,
+  updateAvatar: PropTypes.func.isRequired,
 };
 
 export default GetAvatar;

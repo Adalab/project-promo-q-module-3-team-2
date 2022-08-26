@@ -51,16 +51,6 @@ const Fill = (props) => {
 
         <p className="fillInput__label">Imagen de perfil</p>
         <div className="fillInput__profile">
-          {/*    <label className="action__upload-btn" htmlFor="img-selector">
-        Añadir imagen
-      </label>
-      <input
-        type="file"
-        name="photo"
-        id="img-selector"
-        className="action__hiddenField"
-      /> */}
-
           <div>
             <GetAvatar avatar={props.avatar}
             updateAvatar={props.updateAvatar} />

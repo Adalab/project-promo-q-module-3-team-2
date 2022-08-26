@@ -37,10 +37,10 @@ function App() {
     });
   };
 
-  const updateAvatar =(image)=>{
+  const updateAvatar =(avatar)=>{
     setDataCard({
       ...dataCard,
-      photo: image
+      photo: avatar
     })
   }
   const handleShare = (link) => {
