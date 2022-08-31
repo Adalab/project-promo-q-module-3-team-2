@@ -4,6 +4,7 @@ const Fill = (props) => {
 
   const handleCollapsable = (ev) =>{
     props.handleCollapsable(ev.currentTarget.id);
+    props.handleClickCollapsed();
   }
 
   const handlerInput= (ev) =>{
@@ -20,7 +21,7 @@ const Fill = (props) => {
         </h2>
         <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
       </section>
-      <div className={`fillInput  ${props.classCollapsed}`}>
+      <div className={`fillInput ${props.isOpen? '' : 'collapsed'}`}>
         <label className="fillInput__label" htmlFor="fullName">
           Nombre completo
         </label>

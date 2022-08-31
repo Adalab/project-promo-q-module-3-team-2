@@ -58,7 +58,7 @@ function App() {
     rotate(menuClicked);
     console.log(menuClicked);
     
-    setIsCollapsed(menuClicked);
+    //setIsCollapsed(menuClicked);
 
   };
 

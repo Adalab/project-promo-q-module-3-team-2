@@ -4,6 +4,7 @@ const Share = (props) => {
 
   const handleCollapsable = (ev) =>{
     props.handleCollapsable(ev.currentTarget.id);
+    props.handleClickCollapsed();
   }
 
   const handleShare=(ev)=>{
@@ -21,7 +22,7 @@ const Share = (props) => {
         </h2>
         <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
       </section>
-      <section className={`${props.classCollapsed}`}>
+      <section className={`${props.isOpen? '' : 'collapsed'}`}>
         <button className="share__button" onClick={handleShare}>
           <i className="fa-regular fa-address-card share__button--icon"></i>
           Crear tarjeta

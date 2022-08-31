@@ -2,6 +2,7 @@ const Design = (props) => {
   
   const handleCollapsable = (ev) =>{
     props.handleCollapsable(ev.currentTarget.id);
+    props.handleClickCollapsed()
   }
 
   const handlerInput= (ev) =>{
@@ -11,7 +12,7 @@ const Design = (props) => {
   }
 
   return (
-    <fieldset className="desing">
+    <fieldset className="desing" >
       <section
         className="headSection  design "
         onClick={handleCollapsable}
@@ -23,7 +24,9 @@ const Design = (props) => {
         </h2>
         <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
       </section>
-      <div className={`desing__div ${props.classCollapsed}`}>
+      <div className={props.isOpen? '' : 'collapsed'}
+      
+      >
         <h3 className="desing__div--title3">Colores</h3>
         <div className="desing__div--colors">
           <label className="familyColor1" htmlFor="familyColor1">
