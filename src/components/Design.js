@@ -22,7 +22,7 @@ const Design = (props) => {
           <i className="fa fa-object-ungroup" aria-hidden="true"></i>
           Diseña
         </h2>
-        <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
+        <i className={`fa-solid fa-angle-down ${props.isOpen? '' : 'rotate'}`}></i>
       </section>
       <div className={props.isOpen? '' : 'collapsed'}
       

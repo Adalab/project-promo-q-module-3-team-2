@@ -19,7 +19,7 @@ const Fill = (props) => {
         <h2 className=" headSection__title">
           <i className="fa fa-keyboard" aria-hidden="true"></i>Rellena
         </h2>
-        <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
+        <i className={`fa-solid fa-angle-down ${props.isOpen? '' : 'rotate'}`}></i>
       </section>
       <div className={`fillInput ${props.isOpen? '' : 'collapsed'}`}>
         <label className="fillInput__label" htmlFor="fullName">

@@ -20,7 +20,7 @@ const Share = (props) => {
         <h2 className=" headSection__title">
           <i className="fa fa-share-nodes" aria-hidden="true"></i>Comparte
         </h2>
-        <i className={`fa-solid fa-angle-down ${props.arrowRotated}`}></i>
+        <i className={`fa-solid fa-angle-down ${props.isOpen? '' : 'rotate'}`}></i>
       </section>
       <section className={`${props.isOpen? '' : 'collapsed'}`}>
         <button className="share__button" onClick={handleShare}>
