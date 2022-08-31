@@ -29,7 +29,8 @@ const Share = (props) => {
 
         <div className="card ">
           <p className="card__text"></p>
-          <a href="." className="card__link " target="_blank" rel="noreferrer">
+          <a href={props.shareLink.success === true ? props.shareLink.cardURL : props.shareLink.error} 
+          className="card__link " target="_blank" rel="noreferrer">
             {props.shareLink.success === true ? props.shareLink.cardURL : props.shareLink.error}
           </a>
 

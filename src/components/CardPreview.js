@@ -8,7 +8,8 @@ const CardPreview = (props) => {
     props.reset();
   }
 
-  const avatar = props.avatar === "" ? defaultAvatar : props.avatar;
+   const avatar = props.photo === '' ? defaultAvatar : props.photo;
+
 
     return (
     <section className="preview">
@@ -23,10 +24,7 @@ const CardPreview = (props) => {
           {props.dataCard.job || `Front-end developer`}
         </p>
         <div className="preview__photo">
-          <div
-            className="profile__photo"
-            style={{ backgroundImage: `url(${avatar})` }}
-          ></div>
+          <img className="photo__profile" src={`${avatar}`}></img>
         </div>
 
         <nav>

@@ -1,4 +1,4 @@
-// import previewImg from '../images/img-preview.jpg';
+import defaultAvatar from '../images/img-preview.jpg';
 import { useState, useEffect } from "react";
 //services
 
@@ -19,12 +19,13 @@ function App() {
       email: "",
       linkedin: "",
       github: "",
-      photo: "../images/img-preview.png",
+      photo: "../images/img-preview.jpg",
     })
   );
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
   const [arrowRotated, setArrowRotated] = useState("");
   const [shareLink, setShareLink] = useState("");
+
 
   useEffect(() => {
     ls.set("userData", dataCard);
@@ -40,7 +41,7 @@ function App() {
   const updateAvatar =(avatar)=>{
     setDataCard({
       ...dataCard,
-      photo: avatar
+      photo: avatar,
     })
   }
   const handleShare = (link) => {
