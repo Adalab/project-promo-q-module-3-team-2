@@ -3,7 +3,7 @@ import GetAvatar from "./GetAvatar";
 const Fill = (props) => {
 
   const handleCollapsable = (ev) =>{
-    props.handleCollapsable();
+    props.handleCollapsable(ev.currentTarget.id);
   }
 
   const handlerInput= (ev) =>{

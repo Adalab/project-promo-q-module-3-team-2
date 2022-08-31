@@ -3,7 +3,7 @@ import callToApi from "../services/fetch";
 const Share = (props) => {
 
   const handleCollapsable = (ev) =>{
-    props.handleCollapsable();
+    props.handleCollapsable(ev.currentTarget.id);
   }
 
   const handleShare=(ev)=>{

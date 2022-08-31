@@ -1,7 +1,7 @@
 const Design = (props) => {
   
   const handleCollapsable = (ev) =>{
-    props.handleCollapsable();
+    props.handleCollapsable(ev.currentTarget.id);
   }
 
   const handlerInput= (ev) =>{
@@ -13,7 +13,7 @@ const Design = (props) => {
   return (
     <fieldset className="desing">
       <section
-        className="headSection  design"
+        className="headSection  design "
         onClick={handleCollapsable}
         id="design"
       >
