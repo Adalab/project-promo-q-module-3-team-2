@@ -26,7 +26,7 @@ function App() {
     })
   );
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
-  const [isCollapsed, setIsCollapsed] = useState([]);
+  const [isOpen, setIsOpen] = useState('design');
   const [arrowRotated, setArrowRotated] = useState("");
   const [shareLink, setShareLink] = useState("");
 
@@ -89,7 +89,7 @@ function App() {
     
     <div>
       <Routes>
-        <Route path="/" element={<Landing/>}/ >
+        <Route path="/" element={<Landing/>} />
         <Route path="/createcard" element={<Card 
           reset={reset}
           handleCollapsable={handleCollapsable}
@@ -97,17 +97,16 @@ function App() {
           handleShare={handleShare}
           updateAvatar={updateAvatar}
           classCollapsed={classCollapsed} 
-          isCollapsed={isCollapsed}
+          isOpen={isOpen}
           dataCard={dataCard}
           shareLink={shareLink}
           arrowRotated={arrowRotated} 
-          }
           />  }/>
       </Routes>
         
       <Footer />
     </div>
-  );
-}
+    );
+  }
 
 export default App;

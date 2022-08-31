@@ -20,7 +20,8 @@ const Card = (props) => {
       dataCard={props.dataCard} 
       arrowRotated={props.arrowRotated} 
       classCollapsed={props.classCollapsed}
-      handlerInput={props.handlerInput}/>
+      handlerInput={props.handlerInput}
+      isOpen={props.isOpen}/>
 
       <Fill handleCollapsable={props.handleCollapsable} 
       handlerInput={props.handlerInput}
