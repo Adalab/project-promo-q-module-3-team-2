@@ -59,6 +59,7 @@ function GetAvatar(props) {
   };
 
   const avatar = props.avatar === "" ? defaultAvatar : props.avatar;
+  
   return (
     <div className="get-avatar">
       <label className="action__upload-btn" htmlFor="img-selector">

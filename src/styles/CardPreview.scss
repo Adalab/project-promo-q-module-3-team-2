@@ -44,14 +44,6 @@
     margin-left: 20px;
   }
 
-  &__photo {
-    width: 240px;
-    height: 200px;
-    margin-top: 10px;
-    background: url(../images/img-preview.jpg) center no-repeat;
-    background-size: contain;
-  }
-
   &__socialIcons {
     display: flex;
     margin-top: 10px;
@@ -94,4 +86,13 @@
     background-color: $silver;
     padding: 8px;
   }
+}
+
+
+.photo__profile{ 
+  width: 100%;
+  margin-top: 10px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+
 }

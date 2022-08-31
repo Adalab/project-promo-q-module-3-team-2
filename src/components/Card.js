@@ -11,7 +11,8 @@ const Card = (props) => {
     <main className="mainCard">
     <CardPreview reset={props.reset}
       dataCard={props.dataCard} 
-      avatar={props.dataCard.photo}
+      // avatar={props.dataCard.photo}
+      photo={props.dataCard.photo}
       updateAvatar={props.updateAvatar} />
 
     <form className="form">

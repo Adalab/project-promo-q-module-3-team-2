@@ -51,10 +51,8 @@ const Fill = (props) => {
 
         <p className="fillInput__label">Imagen de perfil</p>
         <div className="fillInput__profile">
-          <div>
             <GetAvatar avatar={props.avatar}
             updateAvatar={props.updateAvatar} />
-          </div>
         </div>
 
         <label className="fillInput__label" htmlFor="Email">
