@@ -1,3 +1,5 @@
+
+
 .desing {
   width: 100%;
   display: flex;
@@ -257,42 +259,6 @@
   }
 }
 
-.share {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-top: $white-two solid 1px;
-
-  &__button {
-    display: flex;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0;
-    width: 209px;
-    height: 50px;
-    background-color: $dull-orange;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
-    font-size: 18px;
-    color: $white-three;
-    text-transform: uppercase;
-
-    // &:hover {
-    //   background-color: $white;
-    // }
-
-    &--icon {
-      color: $white-three;
-      font-size: 22px;
-      height: 22px;
-      padding-right: 14px;
-    }
-  }
-}
 
 .card {
   font-family: $font-family-principal;
@@ -303,6 +269,16 @@
   text-align: center;
   border-bottom: $white-two solid 1px;
   border-top: $white-two solid 1px;
+
+  &__herokulink{
+    padding: 5px;
+    color: $dull-orange;
+    font-size: 14px;
+    word-wrap: break-word;
+    margin-bottom: 13px;
+    text-align: center;
+
+  }
 
   &__text {
     color: $gunmetal;
@@ -323,8 +299,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-radius: 3px;
     margin-bottom: 30px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
 
     &--icon {
       font-size: 18px;

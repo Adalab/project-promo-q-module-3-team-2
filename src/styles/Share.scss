@@ -1,0 +1,54 @@
+@import "./core/core";
+
+.share {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: $white-two solid 1px;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid $silver;
+      }
+  
+    &__button {
+      display: flex;
+      text-align: center;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+      width: 209px;
+      height: 50px;
+      background-color: $dull-orange;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+      font-size: 18px;
+      color: $white-three;
+      text-transform: uppercase;
+
+      &:focus{
+        background-color: rgb(135, 136, 135);
+        color: $white-three;
+      }
+
+  
+  
+    //    &::after {
+    //     background-color: rgb(135, 136, 135);
+    //     color: $white-three;
+    //    }
+  
+      &--icon {
+        color: $white-three;
+        font-size: 22px;
+        height: 22px;
+        padding-right: 14px;
+      }
+    }
+  }
