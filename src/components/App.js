@@ -31,6 +31,7 @@ function App() {
   const [shareLink, setShareLink] = useState("");
 
 
+
   useEffect(() => {
     ls.set("userData", dataCard);
   }, [dataCard]);
@@ -57,9 +58,7 @@ function App() {
     descolapsar(menuClicked);
     rotate(menuClicked);
     console.log(menuClicked);
-    
     //setIsCollapsed(menuClicked);
-
   };
 
   const rotate = (id) => {

@@ -30,10 +30,11 @@ const Fill = (props) => {
           type="text"
           id="fullName"
           name="name"
-          placeholder="Ej : Anakin Skywalker"
+          placeholder="Ej : Anakin Skywalker (40 caracteres máximo)"
           required=""
           value={props.dataCard.name}
           onChange={handlerInput}
+          maxLength='40'
         />
 
         <label className="fillInput__label" htmlFor="job">
@@ -44,14 +45,15 @@ const Fill = (props) => {
           type="text"
           id="job"
           name="job"
-          placeholder="Ej : Jedi Knight"
+          placeholder="Ej : Jedi Knight (25 caracteres máximo)"
           required=""
           value={props.dataCard.job}
           onChange={handlerInput}
+          maxLength='25'
         />
 
         <p className="fillInput__label">Imagen de perfil</p>
-        <div className="fillInput__profile">
+        <div className="fillInput__profile" title="Añade tu imagen de perfil al formulario">
             <GetAvatar avatar={props.avatar}
             updateAvatar={props.updateAvatar} />
         </div>

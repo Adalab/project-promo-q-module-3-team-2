@@ -13,7 +13,7 @@ const CardPreview = (props) => {
 
     return (
     <section className="preview">
-      <button className="preview__reset" onClick={reset}>
+      <button className="preview__reset" onClick={reset} title='Resetear el formulario'>
           <i className="fa-regular fa-trash-can"></i> Reset
         </button>
       <article className={`preview__box palette-${props.dataCard.palette}`}>
@@ -31,11 +31,12 @@ const CardPreview = (props) => {
 
         <nav>
           <ul className="preview__socialIcons">
-            <li>
+            <li >
               <a
                 href={`tel:${props.dataCard.phone}`}
                 rel="noreferrer"
                 className="preview__icon"
+                title={`Teléfono: ${props.dataCard.phone}`}
               >
                 <i className="fa-solid fa-mobile-screen-button"></i>
               </a>
@@ -45,6 +46,7 @@ const CardPreview = (props) => {
                 href={`mailto:${props.dataCard.email}`}
                 rel="noreferrer"
                 className="preview__icon"
+                title={`Email: ${props.dataCard.email}`}
               >
                 <i className="fa-regular fa-envelope"></i>
               </a>
@@ -55,7 +57,8 @@ const CardPreview = (props) => {
                 href={props.dataCard.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="preview__icon  "
+                className="preview__icon"
+                title={`LinkedIn: ${props.dataCard.linkedin}`}
               >
                 <i className="fa-brands fa-linkedin-in"></i>
               </a>
@@ -66,6 +69,7 @@ const CardPreview = (props) => {
                 rel="noreferrer"
                 target="_blank"
                 className="preview__icon"
+                title={`Github: ${props.dataCard.github}`}
               >
                 <i className="fa-brands fa-github-alt "></i>
               </a>
