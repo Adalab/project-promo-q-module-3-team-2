@@ -22,7 +22,7 @@ function App() {
       email: "",
       linkedin: "",
       github: "",
-      photo: "../images/img-preview.jpg",
+      photo: "",
     })
   );
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
@@ -80,7 +80,7 @@ function App() {
       email: "",
       linkedin: "",
       github: "",
-      photo: "../images/img-preview.png",
+      photo: "",
     });
   };
 

@@ -2,13 +2,13 @@ import "../styles/CardPreview.scss";
 import defaultAvatar from '../images/img-preview.jpg'
 
 const CardPreview = (props) => {
-
+  console.log(props);
   const reset = (ev) =>{
     ev.preventDefault();
     props.reset();
   }
 
-   const avatar = props.photo === '' ? defaultAvatar : props.photo;
+   const avatar = props.dataCard.photo === '' ? defaultAvatar : props.dataCard.photo;
 
 
     return (
@@ -26,7 +26,7 @@ const CardPreview = (props) => {
           </p>
         </div>
         <div className="preview__photo">
-          <img className="photo__profile" src={`${avatar}`}></img>
+          <img className="photo__profile" src={avatar}></img>
         </div>
 
         <nav>
