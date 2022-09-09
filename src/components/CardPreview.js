@@ -17,7 +17,7 @@ const CardPreview = (props) => {
           <i className="fa-regular fa-trash-can"></i> Reset
         </button>
       <article className={`preview__box palette-${props.dataCard.palette}`}>
-        <div className="preview__container">
+        <div className={`preview__container--${props.dataCard.palette}`}>
           <h3 className="preview__name ">
             {props.dataCard.name || `Nombre Apellido`}
           </h3>

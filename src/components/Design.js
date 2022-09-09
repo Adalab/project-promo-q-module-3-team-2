@@ -24,9 +24,8 @@ const Design = (props) => {
         </h2>
         <i className={`fa-solid fa-angle-down ${props.isOpen? '' : 'rotate'}`}></i>
       </section>
-      <div className={props.isOpen? '' : 'collapsed'}
       
-      >
+      <div className={`desing__div ${props.isOpen? '' : 'collapsed'}`}>
         <h3 className="desing__div--title3">Colores</h3>
         <div className="desing__div--colors">
           <label className="familyColor1" htmlFor="familyColor1">
