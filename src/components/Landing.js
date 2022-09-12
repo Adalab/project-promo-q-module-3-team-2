@@ -33,7 +33,8 @@ return(
   </section>
 
 
-  <section className="buttonLanding">
+  <section className="buttonLanding animate__animated
+ animate__heartBeat">
     <Link to= "/createcard" className="buttonLanding__Link"
       alt="Comenzar">Comenzar</Link>
   </section>

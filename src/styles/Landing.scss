@@ -84,6 +84,15 @@
     background-color: $dirty-blue;
     border-radius: 21px;
   
+
+   
+
+    &:hover{
+      transform: scale(1.25);
+      transition: transform ease 1s;
+      
+    }
+  
     &__Link {
       text-decoration: none;
       text-transform: uppercase;
@@ -94,3 +103,4 @@
       padding: 10%;
     }
   }
+
