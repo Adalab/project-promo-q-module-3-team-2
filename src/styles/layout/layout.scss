@@ -2,7 +2,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   border-bottom: 1px solid $white-two;
 
@@ -157,55 +156,6 @@
   margin-left: 20px;
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $white-three;
-  border-top: solid 1px $white-three;
-
-  @media all and (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.footerCopy {
-  color: $brownish-grey;
-  padding-top: 18px;
-  padding-bottom: 12px;
-  opacity: 0.5;
-  @media all and (min-width: 768px) {
-    margin: 18px 380px 22px 41px;
-  }
-}
-
-.footerImage {
-  width: 103px;
-  height: 40px;
-  margin: 12px 47px 20px 48px;
-  @media all and (min-width: 768px) {
-    margin: 10px 40px;
-  }
-}
-
-.header {
-  width: 100%;
-  height: 111px;
-
-  &__container {
-    display: flex;
-    width: 201px;
-    height: 50px;
-
-    margin: 31px 0 0 40px;
-  }
-  &--logoProfile {
-    width: fit-content;
-  }
-}
-
 .mainCard {
   @media all and (min-width: 768px) {
     display: flex;
@@ -251,196 +201,6 @@
   .fa {
     color: $dull-orange;
     padding-right: 10px;
-  }
-}
-
-.mainLanding {
-  width: 100vw;
-  height: 85vh;
-  padding: 22vh 10vw 6vh;
-  background-color: $white-four;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.mainInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-
-  &__logoCards {
-    width: 250px;
-    height: 63px;
-    background: url("../../images/logo-awesome-profile-cards-copia.png") center
-      no-repeat;
-    background-size: contain;
-
-    @media all and (min-width: 768px) {
-      width: 419px;
-      height: 105px;
-    }
-  }
-
-  &__title {
-    font-family: $font-family-landing;
-    color: $dull-orange;
-    font-size: 19.2px;
-
-    @media all and (min-width: 768px) {
-      font-size: 24px;
-    }
-  }
-
-  &__description {
-    font-family: $font-family-principal;
-    color: $dark-green-blue;
-    font-size: 12.8px;
-
-    @media all and (min-width: 768px) {
-      font-size: 16px;
-    }
-  }
-
-  &__iconsGroup {
-    width: 268px;
-    height: 73.8px;
-    border: solid 1.6px $dull-orange;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    @media all and (min-width: 768px) {
-      width: 325px;
-      height: 86px;
-    }
-
-    .iconStyle {
-      color: $dull-orange;
-    }
-
-    .iconText {
-      color: $gunmetal;
-      font-size: 12.8px;
-      font-family: $font-family-principal;
-      margin-top: 5px;
-    }
-  }
-}
-
-.buttonLanding {
-  width: 129px;
-  height: 42px;
-  background-color: $dirty-blue;
-  border-radius: 21px;
-
-  &__Link {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $white-three;
-    font-family: $font-family-principal;
-    font-weight: 600;
-    display: inline-block;
-    padding: 10%;
-  }
-}
-
-.preview {
-  background: linear-gradient($silver, $pale-grey);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  height: 457px;
-  width: 100%;
-  margin-top: 20px;
-
-  @media all and (min-width: 768px) {
-    border-radius: 6px;
-    height: 812px;
-  }
-
-  &__box {
-    width: 240px;
-    background-color: $white-three;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    position: relative;
-    box-shadow: 0 1px 10px 0 $black-20, 0 1px 3px 0 rgba(0, 0, 0, 0.35);
-    font-family: $font-family-secondary;
-  }
-
-  &__name {
-    width: 200px;
-    height: 20px;
-    //color: $dark-green-blue;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: capitalize;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-bottom: 15px;
-  }
-
-  &__job {
-    width: 170px;
-    height: 20px;
-    color: $gunmetal;
-    margin-left: 20px;
-  }
-
-  &__photo {
-    width: 240px;
-    height: 200px;
-    margin-top: 10px;
-    background: url(../../images/img-preview.jpg) center no-repeat;
-    background-size: contain;
-  }
-
-  &__socialIcons {
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 12px;
-    margin-left: 20px;
-  }
-
-  &__icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: solid 2px;
-    //color: $dark-green-blue;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    text-decoration: none;
-  }
-
-  &__rectangle {
-    width: 5px;
-    height: 42px;
-    // background-color: $dirty-blue;
-    position: absolute;
-    top: 20px;
-  }
-
-  &__reset {
-    width: 75px;
-    height: 30px;
-    font-size: 12px;
-    color: $gunmetal;
-    text-transform: uppercase;
-    border-radius: 15px;
-    border: solid 1px $white-three;
-    margin-top: 40px;
-    margin-left: -170px;
-    background-color: $silver;
   }
 }
 
@@ -494,43 +254,6 @@
   }
 }
 
-.share {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-top: $white-two solid 1px;
-
-  &__button {
-    display: flex;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0;
-    width: 209px;
-    height: 50px;
-    background-color: $dull-orange;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
-    font-size: 18px;
-    color: $white-three;
-    text-transform: uppercase;
-
-    // &:hover {
-    //   background-color: $white;
-    // }
-
-    &--icon {
-      color: $white-three;
-      font-size: 22px;
-      height: 22px;
-      padding-right: 14px;
-    }
-  }
-}
-
 .card {
   font-family: $font-family-principal;
   display: flex;
@@ -540,6 +263,15 @@
   text-align: center;
   border-bottom: $white-two solid 1px;
   border-top: $white-two solid 1px;
+
+  &__herokulink {
+    padding: 5px;
+    color: $dull-orange;
+    font-size: 14px;
+    word-wrap: break-word;
+    margin-bottom: 13px;
+    text-align: center;
+  }
 
   &__text {
     color: $gunmetal;
@@ -560,8 +292,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border-radius: 3px;
     margin-bottom: 30px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
 
     &--icon {
       font-size: 18px;
@@ -587,5 +320,4 @@
 
 .rotate {
   transform: rotate(180deg);
-  transition-duration: 500ms;
 }

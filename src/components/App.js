@@ -1,6 +1,6 @@
-import defaultAvatar from '../images/img-preview.jpg';
+import defaultAvatar from "../images/img-preview.jpg";
 import { useState, useEffect } from "react";
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 // import {Link} from 'react-router-dom';
 //services
 
@@ -26,11 +26,9 @@ function App() {
     })
   );
   const [classCollapsed, setClassCollapsed] = useState("collapsed");
-  const [isOpen, setIsOpen] = useState('design');
+  const [isOpen, setIsOpen] = useState("design");
   const [arrowRotated, setArrowRotated] = useState("");
   const [shareLink, setShareLink] = useState("");
-
-
 
   useEffect(() => {
     ls.set("userData", dataCard);
@@ -43,19 +41,19 @@ function App() {
     });
   };
 
-  const updateAvatar =(avatar)=>{
+  const updateAvatar = (avatar) => {
     setDataCard({
       ...dataCard,
       photo: avatar,
-    })
-  }
+    });
+  };
   const handleShare = (link) => {
-     setShareLink(link);  
+    setShareLink(link);
   };
 
   const handleCollapsable = (data) => {
     const menuClicked = data;
-    descolapsar(menuClicked);
+    collapsed(menuClicked);
     rotate(menuClicked);
     console.log(menuClicked);
     //setIsCollapsed(menuClicked);
@@ -64,11 +62,11 @@ function App() {
   const rotate = (id) => {
     arrowRotated === "" ? setArrowRotated("rotate") : setArrowRotated("");
   };
-
-  function descolapsar(id) {
-    classCollapsed === "collapsed"
-      ? setClassCollapsed("")
-      : setClassCollapsed("collapsed");
+  //hemos cambiado el orden del ternario
+  function collapsed(id) {
+    classCollapsed === ""
+      ? setClassCollapsed("collapsed")
+      : setClassCollapsed("");
   }
 
   const reset = () => {
@@ -85,27 +83,31 @@ function App() {
   };
 
   return (
-    
     <div>
       <Routes>
-        <Route path="/" element={<Landing/>} />
-        <Route path="/createcard" element={<Card 
-          reset={reset}
-          handleCollapsable={handleCollapsable}
-          handlerInput={handlerInput} 
-          handleShare={handleShare}
-          updateAvatar={updateAvatar}
-          classCollapsed={classCollapsed} 
-          isOpen={isOpen}
-          dataCard={dataCard}
-          shareLink={shareLink}
-          arrowRotated={arrowRotated} 
-          />  }/>
+        <Route path="/" element={<Landing />} />
+        <Route
+          path="/createcard"
+          element={
+            <Card
+              reset={reset}
+              handleCollapsable={handleCollapsable}
+              handlerInput={handlerInput}
+              handleShare={handleShare}
+              updateAvatar={updateAvatar}
+              classCollapsed={classCollapsed}
+              isOpen={isOpen}
+              dataCard={dataCard}
+              shareLink={shareLink}
+              arrowRotated={arrowRotated}
+            />
+          }
+        />
       </Routes>
-        
+
       <Footer />
     </div>
-    );
-  }
+  );
+}
 
 export default App;

@@ -1,17 +1,16 @@
 import GetAvatar from "./GetAvatar";
 
 const Fill = (props) => {
-
-  const handleCollapsable = (ev) =>{
+  const handleCollapsable = (ev) => {
     props.handleCollapsable(ev.currentTarget.id);
     props.handleClickCollapsed();
-  }
+  };
 
-  const handlerInput= (ev) =>{
+  const handlerInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     props.handlerInput(inputValue, inputName);
-  }
+  };
 
   return (
     <fieldset className="fill">
@@ -19,14 +18,16 @@ const Fill = (props) => {
         <h2 className=" headSection__title">
           <i className="fa fa-keyboard" aria-hidden="true"></i>Rellena
         </h2>
-        <i className={`fa-solid fa-angle-down ${props.isOpen? '' : 'rotate'}`}></i>
+        <i
+          className={`fa-solid fa-angle-down ${props.isOpen ? "" : "rotate"}`}
+        ></i>
       </section>
-      <div className={`fillInput ${props.isOpen? '' : 'collapsed'}`}>
+      <div className={`fillInput ${props.isOpen ? "" : "collapsed"}`}>
         <label className="fillInput__label" htmlFor="fullName">
           Nombre completo
         </label>
         <input
-          className="fillInput__input "
+          className="fillInput__input"
           type="text"
           id="fullName"
           name="name"
@@ -34,7 +35,7 @@ const Fill = (props) => {
           required=""
           value={props.dataCard.name}
           onChange={handlerInput}
-          maxLength='40'
+          maxLength="40"
         />
 
         <label className="fillInput__label" htmlFor="job">
@@ -49,13 +50,15 @@ const Fill = (props) => {
           required=""
           value={props.dataCard.job}
           onChange={handlerInput}
-          maxLength='25'
+          maxLength="25"
         />
 
         <p className="fillInput__label">Imagen de perfil</p>
-        <div className="fillInput__profile" title="Añade tu imagen de perfil al formulario">
-            <GetAvatar avatar={props.avatar}
-            updateAvatar={props.updateAvatar} />
+        <div
+          className="fillInput__profile"
+          title="Añade tu imagen de perfil al formulario"
+        >
+          <GetAvatar avatar={props.avatar} updateAvatar={props.updateAvatar} />
         </div>
 
         <label className="fillInput__label" htmlFor="Email">
